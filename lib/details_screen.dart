@@ -67,7 +67,7 @@ class _DetailsScreenState extends State<DetailsScreen> {
                   height: 15,
                 ),
                 const Text(
-                  "Futter Novice to Ninja",
+                  "Flutter Novice to Ninja",
                   style: TextStyle(
                     fontWeight: FontWeight.w700,
                     fontSize: 18,

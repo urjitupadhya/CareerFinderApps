@@ -144,7 +144,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
                   Text(
                     passwordError,
                     style: TextStyle(
-                      color: Colors.red,
+                      color: Colors.tealAccent,
                     ),
                   ),
                   const SizedBox(height: 12),

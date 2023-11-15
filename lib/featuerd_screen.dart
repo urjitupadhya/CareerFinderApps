@@ -6,6 +6,7 @@ import 'package:login_page/jobportalapp.dart';
 import 'package:login_page/profile_screen.dart';
 import 'package:login_page/screens/ongoing_internships_screen.dart';
 import 'package:login_page/TrendingCoursesScreen.dart';
+
 void main() {
   runApp(
     MaterialApp(
@@ -44,7 +45,7 @@ class _FeaturedScreenState extends State<FeaturedScreen> {
     } else {
       return categories
           .where((category) =>
-              category.name.toLowerCase().contains(searchText.toLowerCase()))
+          category.name.toLowerCase().contains(searchText.toLowerCase()))
           .toList();
     }
   }
@@ -75,7 +76,7 @@ class Body extends StatelessWidget {
     } else {
       return categories
           .where((category) =>
-              category.name.toLowerCase().contains(searchText.toLowerCase()))
+          category.name.toLowerCase().contains(searchText.toLowerCase()))
           .toList();
     }
   }
@@ -176,7 +177,7 @@ class CategoryCard extends StatelessWidget {
       Navigator.push(
         context,
         MaterialPageRoute(
-          builder: (context) =>   JobPortalApp(),
+          builder: (context) => JobPortalApp(),
         ),
       );
     }
@@ -224,13 +225,14 @@ class CategoryCard extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            
           ],
         ),
       ),
     );
   }
-}class CustomAppBar extends StatelessWidget {
+}
+
+class CustomAppBar extends StatelessWidget {
   final String searchText;
   final Function(String) onSearchTextChanged;
   final TextEditingController _searchController = TextEditingController();
@@ -238,6 +240,9 @@ class CategoryCard extends StatelessWidget {
   CustomAppBar({required this.searchText, required this.onSearchTextChanged}) {
     _searchController.text = searchText; // Initialize the search text in the controller
   }
+
+  static const Color appBarColor1 = Color(0xFFB2DFDB);
+  static const Color appBarColor2 = Color(0xFF80CBC4);
 
   String _getGreeting() {
     final now = DateTime.now();
@@ -270,8 +275,8 @@ class CategoryCard extends StatelessWidget {
           end: Alignment.bottomRight,
           stops: [0.1, 0.5],
           colors: [
-            Color(0xFFFF1D0E),
-            Color(0xFFD61010),
+            appBarColor1, // Use the defined color constant
+            appBarColor2, // Use the defined color constant
           ],
         ),
       ),
@@ -296,7 +301,7 @@ class CategoryCard extends StatelessWidget {
                 ),
               ),
               Text(
-                greeting, // Removed the comma
+                greeting,
                 style: Theme.of(context).textTheme.headline6,
               ),
             ],
@@ -304,15 +309,14 @@ class CategoryCard extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          // Search bar section
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: TextField(
               controller: _searchController,
               onChanged: (value) {
-                onSearchTextChanged(value); // Pass the original text
+                onSearchTextChanged(value);
               },
-              textDirection: TextDirection.ltr, // Set the text direction to LTR
+              textDirection: TextDirection.ltr,
               decoration: InputDecoration(
                 hintText: "Search...",
                 prefixIcon: Icon(Icons.search),
@@ -330,24 +334,20 @@ class CategoryCard extends StatelessWidget {
   }
 }
 
-
 class Category {
   final String name;
   final String thumbnail;
-  
 
   Category({
     required this.name,
     required this.thumbnail,
-
   });
 }
 
 final categoryList = <Category>[
-  Category(name: 'Category 1', thumbnail: 'assets/images/guidance.png', ),
-  Category(name: 'Category 2', thumbnail: 'assets/images/graduates.png', ),
-  Category(name: 'Category 3', thumbnail: 'assets/images/chatbot.png', ),
-  Category(name: 'Category 4', thumbnail: 'assets/images/other.png', ),
+  Category(name: 'Category 1', thumbnail: 'assets/images/guidance.png'),
+  Category(name: 'Category 2', thumbnail: 'assets/images/graduates.png'),
+  Category(name: 'Category 3', thumbnail: 'assets/images/chatbot.png'),
+  Category(name: 'Category 4', thumbnail: 'assets/images/other.png'),
 ];
 const double kCategoryCardImageSize = 100.0;
-

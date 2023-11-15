@@ -114,11 +114,10 @@ flutter:
     - assets/images/ic.gif
     - assets/images/uu.png
     - assets/images/giphy.gif
-    - assets/icons/splash.jpg
+    - assets/icons/splash.gif
     - assets/images/background.png
     - assets/images/internship.gif
     - assets/images/profile.jpg
-    - assets/images/applogo.jpg
     - assets/images/profiles.jpg
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
